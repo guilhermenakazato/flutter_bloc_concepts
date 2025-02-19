@@ -1,20 +1,15 @@
 import 'package:basic_bloc_concepts/logic/cubit/counter_cubit.dart';
-import 'package:basic_bloc_concepts/logic/cubit/internet_cubit.dart';
 import 'package:bloc_test/bloc_test.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group(
     "CounterCubit",
     () {
-      Connectivity connectivity = Connectivity();
-      InternetCubit internetCubit = InternetCubit(connectivity: connectivity);
-      CounterCubit counterCubit = CounterCubit(internetCubit: internetCubit);
+      CounterCubit counterCubit = CounterCubit();
 
       setUp(() {
-        internetCubit = InternetCubit(connectivity: connectivity);
-        counterCubit = CounterCubit(internetCubit: internetCubit);
+        counterCubit = CounterCubit();
       });
 
       test(
